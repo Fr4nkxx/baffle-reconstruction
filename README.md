@@ -13,9 +13,10 @@ put SAM.pth in ./third-party/SAM
 
 3. nano ~/.zshrc
 
-
-    export MVCAM_COMMON_RUNENV=/opt/MVS/lib
-    export LD_LIBRARY_PATH=/opt/MVS/lib/64:/opt/MVS/lib/32:$LD_LIBRARY_PATH
+```
+export MVCAM_COMMON_RUNENV=/opt/MVS/lib
+export LD_LIBRARY_PATH=/opt/MVS/lib/64:/opt/MVS/lib/32:$LD_LIBRARY_PATH
+```
 
 4. Gige net setting:
 - ipv4:192.168.1.2/24
