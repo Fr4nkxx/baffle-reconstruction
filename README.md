@@ -4,7 +4,7 @@
 - vit_l: [ViT-L SAM model](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_l_0b3195.pth).
 - vit_b: [ViT-B SAM model](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth).
 
-put SAM.pth in ./third-party/SAM
+put SAM.pth in `./third-party/SAM`
 
 ## HIKROBOT MVS
 1. download [HIKROBOT MVS SDK](https://www.hikrobotics.com/cn/machinevision/service/download?module=0)
