@@ -8,6 +8,7 @@ Created on Fri Jun 10 12:15:18 2022
 
 import sys
 import cv2
+import os
 
 sys.path.append("/opt/MVS/Samples/64/Python/MvImport")
 from MvCameraControl_class import *
@@ -165,7 +166,7 @@ def get_image(cam, nPayloadSize, devicenum):
             print ("convert pixel fail ! ret[0x%x]" % ret)
             del data_buf
             sys.exit()
-        file_path = "/home/a410/Documents/Data/pic/image_buff"+str(devicenum)+".jpg"
+        file_path = "./Data/image/image_buff"+str(devicenum)+".jpg"
         file_open = open(file_path.encode('ascii'), 'wb+')
         try:
             img_buff = (c_ubyte * stConvertParam.nDataLen)()
@@ -216,7 +217,7 @@ if __name__ == "__main__":
     i = 27
     # 初始化设备
     deviceList = init_device()
-    output_path = "/home/a410/Documents/Data/pic/baffle/rgb4/"
+    output_path = "./Data/image/rgb1"
     folder = os.path.exists(output_path)
     if not folder:
         os.makedirs(output_path) 
@@ -225,7 +226,7 @@ if __name__ == "__main__":
         cam1, nPayloadSize1 = select_cam(deviceList,0)
         while True:
             data_buf1 = get_image(cam1, nPayloadSize1, 1)
-            image1 = cv2.imread("/home/a410/Documents/Data/pic/image_buff1.jpg")
+            image1 = cv2.imread("./Data/image/image_buff1.jpg")
             cv2.namedWindow("image1", 0)
             cv2.resizeWindow("image1", 2000, 1440)
             cv2.imshow("image1", image1)
@@ -248,8 +249,8 @@ if __name__ == "__main__":
         while True:
             data_buf1 = get_image(cam1, nPayloadSize1, 1)
             data_buf2 = get_image(cam2, nPayloadSize2, 2)
-            image1 = cv2.imread("/home/a410/Documents/Data/pic/image_buff1.jpg")
-            image2 = cv2.imread("/home/a410/Documents/Data/pic/image_buff2.jpg")
+            image1 = cv2.imread("./Data/image/image_buff1.jpg")
+            image2 = cv2.imread("./Data/image/image_buff2.jpg")
             cv2.namedWindow("image1", 0)
             cv2.resizeWindow("image1", 2000, 1440)
             cv2.imshow("image1", image1)
